@@ -26,8 +26,14 @@
     image = document.getElementById(id)
     image.style.position = "relative";
     image.style.left = Math.random() * (10 - 0) + 0 +'px';
-    image.style.top = Math.random() * (10 - 0) + 0 +'px';
-    var str = y += 1
+    if(id === "rubbie1"){
+      image.style.top = Math.random() * (10 - 0) + 0 +'px';
+      var str = y += 1
+    } else {
+      image.style.top = Math.random() * (10 - 0) + 0 +'px';
+      var str = z += 1
+    }
+
     var rubbie = document.getElementById(id).innerHTML = "<h4>" + str + "<h4>";
     if(y % 100 == 0){
       meow()
@@ -82,11 +88,16 @@
   <script src="components/version/interpolate-filter.js"></script>
 
   <script>
-    var socket = io('http://localhost');
-    socket.on('news', function (data) {
-      console.log(data);
-      socket.emit('my other event', { my: 'data' });
-    });
+    var socket = io('http://localhost:8000');
+    var name = prompt("what is your name")
+    socket.emit('new_player', { name: name })
+    // function (data) {
+    //   console.log(data);
+    //   socket.emit('my other event', { my: 'data' });
+    // });
+
+
+
   </script>
 </body>
 </html>

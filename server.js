@@ -1,7 +1,7 @@
 var http = require('http');
 var express = require('express')
 var path = require('path');
-var io = require('socket.io')
+var io = require('socket.io');
 var app = express()
 
 // var routes_setter = require('./server/config/routes.js');
@@ -18,9 +18,12 @@ var server = app.listen(8000, function(){
 var io = io.listen(server)
 
 io.sockets.on('connection', function (socket) {
+  var players = []
   console.log("connected")
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
+  // socket.emit('new_player', { name: 'world });
+  socket.on('new_player', function (data) {
+    console.log("got new player")
+    players.push({name:data.name, id:socket.id})
+    console.log(players)
   });
 });
