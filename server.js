@@ -26,4 +26,8 @@ io.sockets.on('connection', function (socket) {
     players.push({name:data.name, id:socket.id})
     console.log(players)
   });
+  socket.on('winner', function (data){
+    console.log(data, "winner annouce fired")
+    socket.broadcast.emit('winnerAnnounce', data)
+  })
 });
