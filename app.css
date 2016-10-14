@@ -1,0 +1,57 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+.happy, .unhappy{
+  display: inline-block;
+  width: 375px;
+  height: 346px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 20px;
+}
+.unhappy {
+    background-image: url("/images/cat_breather.gif");
+}
+.happy {
+    background-image: url("/images/cat_breather.gif");
+}
+
+#audioControls {
+  display: none;
+}
+h4{
+  color: white;
+}
+
+#footer {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+}
+.center {
+  text-align: center;
+}

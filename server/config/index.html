@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>This is catPlay</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="skeleton.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script type="text/javascript">
+
+  var z = 0;
+  var x = 0;
+  var y = 0;
+
+  function overMe(id) {
+    image = document.getElementById(id)
+    image.style.position = "relative";
+    image.style.left = Math.random() * (10 - 0) + 0 +'px';
+    image.style.top = Math.random() * (10 - 0) + 0 +'px';
+    var str = y += 1
+    var rubbie = document.getElementById(id).innerHTML = "<h4>" + str + "<h4>";
+    if(y % 100 == 0){
+      meow()
+    }
+    if(y % 25 == 0){
+      purr()
+    }
+  }
+
+  function meow(){
+    var meow = document.getElementById('meow')
+    meow.play()
+  }
+  function purr(){
+    var purr = document.getElementById('purr')
+    purr.play()
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+   <div class="twelve columns">
+     <ul class="menu">
+       <li><a href="#!/view1">Cat</a></li>
+       <li><a href="#!/view2">Play</a></li>
+     </ul>
+   </div>
+   <div class="eight columns"></div>
+ </div>
+
+
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <div id="footer">catPlay: v<span app-version></span></div>
+</div>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

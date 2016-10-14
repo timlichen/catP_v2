@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="twelve columns">
+    <p>Welcome to catPlay!!!</p>
+
+    <p>Created for the MEAN Stack Hackathon</p>
+
+    <p>Instructions/Rules: To play cat play, simply use your mouse to pet the cat images on the next screen. You must have two players to play cat play, you also need to have dexterity for this challenge.</p>
+  </div>
+</div>
+<div class="row center">
+  <div class="twelve columns">
+    <div onmousemove="overMe('rubbie1')" class="unhappy" id="rubbie1">
+      <h3>Pet me!</h3>
+    </div>
+    <div onmousemove="overMe('rubbie2')" class="happy"  id="rubbie2">
+      <h3>Pet me!</h3>
+    </div>
+
+  <div id="audioControls">
+    <audio controls id="meow">
+      <source src="/sounds/meow.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+
+    <audio controls id="purr">
+      <source src="/sounds/purr.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  </div>
+</div>
